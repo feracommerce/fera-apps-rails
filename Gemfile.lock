@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fera-apps-rails (0.1.0)
+    fera-apps-rails (0.1.1)
       actionview (>= 6.1)
       activesupport (>= 6.1)
       fera-api
