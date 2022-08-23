@@ -1,0 +1,77 @@
+.fera-app-header {
+    text-align: center;
+
+    .header-image {
+        display: inline-block;
+        position: relative;
+        margin-top: 2rem;
+        margin-bottom: 1.25rem;
+
+        .background-image {
+            width: 364px;
+        }
+
+        .app-icon-container {
+            height: 94px;
+            width: 94px;
+            position: absolute;
+            right: 26px;
+            top: 22px;
+            border-radius: 100%;
+            padding: 12px;
+
+            .app-icon {
+                display: block;
+                width: 100%;
+                height: auto;
+                border-radius: 100%;
+            }
+        }
+    }
+}
+
+.fera-app-content {
+    > .lead {
+        text-align: center;
+    }
+
+    > .card {
+        margin-bottom: 1.5rem;
+
+        > .card-body {
+            padding: 2rem;
+        }
+    }
+
+    .steps {
+        .step {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            &--next,
+            &--last {
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+.fera-app-footer {
+    text-align: center;
+
+    .bottomAppNav {
+        margin-top: 2rem;
+    }
+
+    .copyrightAndLinks {
+        --bs-text-opacity: 1;
+
+        color: #6C757D;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+        border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+        font-size: 80%;
+    }
+}

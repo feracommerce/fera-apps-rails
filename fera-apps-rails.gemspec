@@ -19,31 +19,23 @@ Gem::Specification.new do |spec|
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
-    end
-  end
+  spec.files = Dir["{lib,app}/**/*.rb", "LICENSE.txt", "README.md"]
   spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.executables = []
+  spec.require_paths = %w[lib app]
 
-  spec.add_dependency "cssbundling-rails", "~> 1.1"
-  spec.add_dependency "dotenv-rails", "~> 2.8.1"
-  spec.add_dependency "httparty", "~> 0.20"
-  spec.add_dependency "jsbundling-rails", "~> 1.0"
+  spec.add_dependency "actionview", ">= 6.1"
+  spec.add_dependency "activesupport", ">= 6.1"
+  spec.add_dependency "fera-api" # We're ok not locking this version because it is our own library
   spec.add_dependency "omniauth-fera" # We're ok not locking this version because it is our own library
-  spec.add_dependency "omniauth-oauth2", "~> 1.3"
-  spec.add_dependency "pg", "~> 1.2"
-  spec.add_dependency "puma", "~> 5.4"
-  spec.add_dependency "rails", "~> 6.1"
-  spec.add_dependency "redis", "~> 4.7.1"
-  spec.add_dependency "sass-rails", "~> 6.0"
-  spec.add_dependency "to_bool", "~> 2.0"
+  spec.add_dependency "omniauth-oauth2", ">= 1.3"
+  spec.add_dependency "rails", ">= 6.1"
+  spec.add_dependency "railties", ">= 6.1"
 
   spec.add_development_dependency "pry"
   spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "pry-stack_explorer"
   spec.add_development_dependency "rspec", ">= 3.0"
+  spec.add_development_dependency "to_bool", "~> 2.0"
   spec.add_development_dependency "webmock", ">= 3.0"
 end

@@ -1,0 +1,16 @@
+<footer class="fera-app-footer">
+  <div class="bottomAppNav">
+    <a href="<%= ENV['FERA_APP_URL'].chomp('/') %>/integrations/apps/<%= ENV['APP_CODE'] %>"
+       class="btn btn-sm btn-secondary">
+      <i class="bi bi-arrow-left me-2"></i> Back to Fera
+    </a>
+  </div>
+  <div class="copyrightAndLinks">
+    <!-- Last deploy: <%= last_deployed_at %> -->
+    <a href="https://www.fera.ai">Fera™️</a> © <%= Time.now.year %>
+    |  <a href="https://www.fera.ai/privacy-policy" target="_blank">Privacy Policy</a>
+    |  <a href="https://www.fera.ai/terms-of-service" target="_blank">Terms of Service</a>
+    |  <a href="https://help.fera.ai" target="_blank">Support</a>
+    |  <a href="https://app.fera.ai" target="_blank">Fera Dashboard</a>
+  </div>
+</footer>
