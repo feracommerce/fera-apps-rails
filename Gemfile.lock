@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    fera-apps-rails (0.1.1)
+    fera-apps-rails (0.1.2)
       actionview (>= 6.1)
       activesupport (>= 6.1)
       fera-api
@@ -116,7 +116,7 @@ GEM
       concurrent-ruby (~> 1.0)
     interception (0.5)
     json (2.6.2)
-    json-jwt (1.15.2)
+    json-jwt (1.15.3)
       activesupport (>= 4.2)
       aes_key_wrap
       bindata
