@@ -84,6 +84,7 @@ module Fera
         ##
         # Run Fera::API methods in the scope of the current store.
         # fera_api { Fera::Store.current }
+        # @return [Object] Result of block provided
         def fera_api(&block)
           Fera::API.configure(fera_auth_token,
                               api_url: ENV.fetch("FERA_API_URL", nil),
