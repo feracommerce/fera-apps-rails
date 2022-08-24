@@ -41,7 +41,7 @@ module Fera
           return false unless connected_to_fera?
 
           fera_api do
-            Fera::Store.current
+            ::Fera::Store.current
           end
 
           true
@@ -83,7 +83,7 @@ module Fera
 
         ##
         # Run Fera::API methods in the scope of the current store.
-        # fera_api { Fera::Store.current }
+        # fera_api { ::Fera::Store.current }
         # @return [Object] Result of block provided
         def fera_api(&block)
           Fera::API.configure(fera_auth_token,

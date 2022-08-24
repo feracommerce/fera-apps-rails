@@ -12,7 +12,7 @@ module Fera
 
         def load_store
           if session[:store_id].present?
-            Store.find(session[:store_id])
+            ::Store.find(session[:store_id])
           else
             nil
           end
