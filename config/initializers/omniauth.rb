@@ -2,7 +2,7 @@ require 'omniauth-fera'
 
 OmniAuth.config.allowed_request_methods = [:get, :post]
 
-Rails.application.config.middleware.use OmniAuth::Builder do
+::Rails.application.config.middleware.use OmniAuth::Builder do
   provider :fera,
            ENV.fetch('FERA_CLIENT_ID', nil),
            ENV.fetch('FERA_CLIENT_SECRET', nil),

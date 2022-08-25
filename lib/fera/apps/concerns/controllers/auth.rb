@@ -24,7 +24,7 @@ module Fera
         ##
         # You should override this in your own controller.
         def after_fera_callback
-          Rails.logger.warn("#after_fera_callback not implemented in your controller, so the default action was to redirect to the root_path")
+          ::Rails.logger.warn("#after_fera_callback not implemented in your controller, so the default action was to redirect to the root_path")
           redirect_to root_path
         end
 

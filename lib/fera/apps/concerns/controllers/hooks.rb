@@ -18,7 +18,7 @@ module Fera
         def app_uninstall
           @store.destroy!
 
-          Rails.logger.info("Deleted store #{ @store.id } triggered by Fera uninstall webhook.")
+          ::Rails.logger.info("Deleted store #{ @store.id } triggered by Fera uninstall webhook.")
 
           head :ok
         end
@@ -27,7 +27,7 @@ module Fera
         # # This is just here as an example
         # # POST /fera/hooks/review_create
         # def review_create
-        #   Rails.logger.info("Received review_create webhook from Fera for store ##{ @store.id } and review ##{ params[:id] }.")
+        #   ::Rails.logger.info("Received review_create webhook from Fera for store ##{ @store.id } and review ##{ params[:id] }.")
         #
         #   # You'll get a post here with the review data as well as the review id if you want to grab a fresh copy.
         #   # If you want a fresh review copy you do this:
