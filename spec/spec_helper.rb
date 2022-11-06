@@ -37,7 +37,7 @@ RSpec.configure do |config|
     next if !example.exception || $pryed_on_error
 
     if ENV['DEBUG'].to_bool || ENV['PRY_ON_ERROR'].to_bool
-      puts Rainbow("[DEBUG MODE] Test failed:\n").red + example.exception.inspect
+      puts "[DEBUG MODE] Test failed:\n#{ example.exception.inspect }"
       binding.pry # rubocop:disable Lint/Debugger
     elsif ENV['ENABLE_SENTRY_FOR_TEST'].to_bool && ENV['HEROKU_TEST_RUN_BRANCH'] == 'master' && defined?(Raven)
       Raven.capture_exception(example.exception, extra: example.metadata.to_h.slice(:file_path, :line_number, :full_description))

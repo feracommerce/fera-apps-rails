@@ -10,6 +10,12 @@ module Fera
 
         private
 
+        def configure_fera_api_for_store!(&block)
+          if @store.try(:connected_to_fera?) && @store.fera_auth_token.present?
+            Fera::API.configure(@store.fera_auth_token, api_url: ENV.fetch("FERA_API_URL", nil), &block)
+          end
+        end
+
         def load_store
           if session[:store_id].present?
             ::Store.find(session[:store_id])
