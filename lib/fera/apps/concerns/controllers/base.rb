@@ -10,9 +10,14 @@ module Fera
 
         private
 
+        ##
+        # Use like this: `around_action :configure_fera_api_for_store!` to configure the API client
+        # for controller actions.
         def configure_fera_api_for_store!(&block)
           if @store.try(:connected_to_fera?) && @store.fera_auth_token.present?
             Fera::API.configure(@store.fera_auth_token, api_url: ENV.fetch("FERA_API_URL", nil), &block)
+          else
+            yield
           end
         end
 
