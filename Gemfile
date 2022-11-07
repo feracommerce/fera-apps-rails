@@ -12,5 +12,6 @@ group :development, :test do
   gem "pry-remote"
   gem "pry-rescue"
   gem "pry-stack_explorer"
-  gem "rubocop"
+  gem "rubocop", "~> 1.35"
+  gem "spellr", "~> 0.11"
 end

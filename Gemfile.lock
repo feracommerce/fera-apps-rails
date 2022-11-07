@@ -103,6 +103,7 @@ GEM
     faraday-follow_redirects (0.3.0)
       faraday (>= 1, < 3)
     faraday-net_http (3.0.1)
+    fast_ignore (0.17.4)
     fera-api (0.1.2)
       activemodel (>= 4)
       activeresource (>= 6)
@@ -116,6 +117,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     interception (0.5)
+    jaro_winkler (1.5.4)
     json (2.6.2)
     json-jwt (1.16.1)
       activesupport (>= 4.2)
@@ -245,6 +247,10 @@ GEM
     snaky_hash (2.0.0)
       hashie
       version_gem (~> 1.1)
+    spellr (0.11.0)
+      fast_ignore (>= 0.11.0)
+      jaro_winkler
+      parallel (~> 1.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -279,7 +285,8 @@ DEPENDENCIES
   pry-rescue
   pry-stack_explorer
   rspec (>= 3.0)
-  rubocop
+  rubocop (~> 1.35)
+  spellr (~> 0.11)
   to_bool (~> 2.0)
   webmock (>= 3.0)
 
