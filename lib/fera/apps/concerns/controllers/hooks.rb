@@ -16,9 +16,11 @@ module Fera
         # POST /fera/hooks/app_uninstall
         # All apps should have an uninstall hook to cleanup data if app is uninstalled from Fera's side
         def app_uninstall
-          @store.destroy!
+          if @store.present?
+            @store.destroy!
 
-          ::Rails.logger.info("Deleted store #{ @store.id } triggered by Fera uninstall webhook.")
+            ::Rails.logger.info("Deleted store #{ @store.id } triggered by Fera uninstall webhook.")
+          end
 
           head :ok
         end
