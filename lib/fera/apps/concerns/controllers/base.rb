@@ -36,7 +36,7 @@ module Fera
         end
 
         def set_current_store(store) # rubocop:disable Naming/AccessorMethodName
-          session[:store_id] = store.id
+          session[:store_id] = store.try(:id)
           @store = store
         end
       end
